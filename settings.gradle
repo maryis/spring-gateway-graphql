@@ -1,0 +1,6 @@
+rootProject.name = 'timetable-integration-services'
+include 'import-services'
+include 'export-services'
+include 'business-services'
+include 'import-services'
+
