@@ -1,0 +1,82 @@
+server:
+    port: 8083
+
+spring:
+    cloud:
+        gateway:
+          routes:
+                - id: timetableService
+                  uri: "http://localhost:8080"
+                  predicates:
+                    - Path=/timetable/**
+                  filters:
+                    - SetResponseHeader=Access-Control-Allow-Origin, *
+                    - SetResponseHeader=Access-Control-Allow-Headers, *
+                    - SetPath=/graphql
+
+                - id: compassAuthService  # just an example
+                  uri: "http://compass-service:8080"
+                  predicates:
+                    - Path=/auth/**
+                  filters:
+                    - SetResponseHeader=Access-Control-Allow-Origin, *
+                    - SetResponseHeader=Access-Control-Allow-Headers, *
+                    - SetPath=/auth
+
+                - id: compassSynchService  # just an example
+                  uri: "http://compass-service:8080"
+                  predicates:
+                    - Path=/datasync/**
+                  filters:
+                    - SetResponseHeader=Access-Control-Allow-Origin, *
+                    - SetResponseHeader=Access-Control-Allow-Headers, *
+                    - SetPath=/datasync
+
+
+#            globalcors:
+#              cors-configurations:
+#                '[/**]':
+#                  allowedOrigins: "*"
+#                  allowedMethods:
+#                  - GET
+#                  - POST
+
+#actuator
+management:
+  endpoint:
+    httptrace:
+      enabled: true
+    metrics:
+      enabled: true
+
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+security:
+  auth:
+    user: admin  #not used
+    password: password  #not used
+    routes:
+      timetableService: # is used for deakin backend
+        user: user
+        password: e5c08b7b-f7f7-454b-a68c-3c231c7165d4
+
+      compassAuthService: # just as an example
+        user: user1
+        password: password1
+
+      compassSynchService: # just as an example
+        user: user2
+        password: password2
+
+
+  #**************************************************
+  #redis  : if we use third party AS, and we want to persist generated JWT if we need validations in GW layer
+  #rate limit
+  #fallback url : we do not need this
+
+
+
+

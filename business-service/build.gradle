@@ -1,0 +1,62 @@
+
+
+plugins {
+	id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+//	id "io.github.kobylynskyi.graphql.codegen" version "3.1.1" //it is a good package to generate POJO from schema
+
+}
+
+group = 'jdlf.compass.businessservice'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+ext{
+	VERSION_SPRING_BOOT                   = "2.3.1.RELEASE"
+}
+
+dependencies {
+
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	implementation "com.graphql-java-kickstart:graphql-spring-boot-starter:7.0.1"
+	implementation "com.graphql-java-kickstart:graphiql-spring-boot-starter:7.0.1"
+	implementation "com.graphql-java-kickstart:graphql-java-tools:6.0.2"
+
+
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'// for JWT
+	implementation 'org.json:json:20200518'
+	compile group: 'javax.xml', name: 'jaxb-api', version: '2.1'// for JWT
+
+
+
+	compileOnly "org.projectlombok:lombok:1.18.12"
+	annotationProcessor "org.projectlombok:lombok:1.18.12"
+	testCompileOnly "org.projectlombok:lombok:1.18.12"
+	testCompile group: 'junit', name: 'junit', version: '4.13'
+
+
+
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation "com.graphql-java-kickstart:graphql-spring-boot-starter-test:7.0.1"
+
+}
+
+test {
+	useJUnitPlatform()
+}
+
+apply plugin: 'java'
+apply plugin: "org.springframework.boot"
+apply plugin: "io.spring.dependency-management"
+

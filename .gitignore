@@ -1,0 +1,54 @@
+HELP.md
+.gradle
+.gradletasknamecache
+.env
+
+java/engine/common/build/
+java/engine/lines/build/
+java/engine/timetable/build/
+java/timetable-service/build/
+
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### Microsoft Temp Files ###
+~$*
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+**/bin
+.DS_Store
+
+**/__pycache__/
+
+### App Specific ###
+output/
+scripts/experimenting/results/
+
+### Distribution/packaging ###
+build/
