@@ -1,0 +1,98 @@
+2020-10-20 09:19:05,275 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.5.Final
+2020-10-20 09:19:06,450 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-10-20 09:19:07,677 INFO org.springframework.cloud.context.scope.GenericScope [main] BeanFactory id=9b829629-8fd3-3cf2-9349-dfaf999a2d18
+2020-10-20 09:19:09,461 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [After]
+2020-10-20 09:19:09,462 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Before]
+2020-10-20 09:19:09,463 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Between]
+2020-10-20 09:19:09,463 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Cookie]
+2020-10-20 09:19:09,464 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Header]
+2020-10-20 09:19:09,464 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Host]
+2020-10-20 09:19:09,464 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Method]
+2020-10-20 09:19:09,465 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Path]
+2020-10-20 09:19:09,465 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Query]
+2020-10-20 09:19:09,466 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [ReadBodyPredicateFactory]
+2020-10-20 09:19:09,467 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [RemoteAddr]
+2020-10-20 09:19:09,467 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Weight]
+2020-10-20 09:19:09,467 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2020-10-20 09:19:10,468 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 17 endpoint(s) beneath base path '/actuator'
+2020-10-20 09:19:11,931 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port(s): 8083
+2020-10-20 09:19:12,828 INFO org.springframework.boot.StartupInfoLogger [main] Started GatewayApplication in 8.735 seconds (JVM running for 10.44)
+2020-10-20 09:19:56,341 ERROR org.springframework.core.log.CompositeLog [reactor-http-nio-4] [57be6dd8-1]  500 Server Error for HTTP POST "/timetable"
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:8080
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.web.cors.reactive.CorsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.web.trace.reactive.HttpTraceWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP POST "/timetable" [ExceptionHandlingWebHandler]
+Stack trace:
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-10-20 09:21:31,759 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.5.Final
+2020-10-20 09:21:32,525 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-10-20 09:21:33,318 INFO org.springframework.cloud.context.scope.GenericScope [main] BeanFactory id=9b829629-8fd3-3cf2-9349-dfaf999a2d18
+2020-10-20 09:21:34,455 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [After]
+2020-10-20 09:21:34,455 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Before]
+2020-10-20 09:21:34,456 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Between]
+2020-10-20 09:21:34,456 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Cookie]
+2020-10-20 09:21:34,456 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Header]
+2020-10-20 09:21:34,456 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Host]
+2020-10-20 09:21:34,456 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Method]
+2020-10-20 09:21:34,456 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Path]
+2020-10-20 09:21:34,456 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Query]
+2020-10-20 09:21:34,456 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [ReadBodyPredicateFactory]
+2020-10-20 09:21:34,457 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [RemoteAddr]
+2020-10-20 09:21:34,457 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [Weight]
+2020-10-20 09:21:34,457 INFO org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator [main] Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2020-10-20 09:21:35,000 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 17 endpoint(s) beneath base path '/actuator'
+2020-10-20 09:21:35,794 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port(s): 8083
+2020-10-20 09:21:36,256 INFO org.springframework.boot.StartupInfoLogger [main] Started GatewayApplication in 5.21 seconds (JVM running for 7.055)
+2020-10-20 09:22:59,451 ERROR org.springframework.core.log.CompositeLog [reactor-http-nio-4] [53d17716-1]  500 Server Error for HTTP POST "/timetable"
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:8080
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.web.cors.reactive.CorsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.web.trace.reactive.HttpTraceWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP POST "/timetable" [ExceptionHandlingWebHandler]
+Stack trace:
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-10-20 09:26:57,839 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.5.Final
+2020-10-20 09:26:58,505 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-10-20 09:27:01,303 INFO org.springframework.boot.StartupInfoLogger [main] Started GatewayApplication in 4.11 seconds (JVM running for 5.075)
+2020-10-20 09:28:29,288 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.5.Final
+2020-10-20 09:28:29,925 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-10-20 09:28:33,249 INFO org.springframework.boot.StartupInfoLogger [main] Started GatewayApplication in 4.618 seconds (JVM running for 5.693)
+2020-10-20 09:32:00,257 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.5.Final
+2020-10-20 09:32:00,948 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-10-20 09:32:04,157 INFO org.springframework.boot.StartupInfoLogger [main] Started GatewayApplication in 4.594 seconds (JVM running for 5.539)
+2020-10-20 09:32:07,771 INFO jdlf.compass.timetablegateway.filters.LoggingGlobalFilter [reactor-http-nio-3] Incoming request Route{id='timetableService', uri=http://localhost:8080, order=0, predicate=Paths: [/timetable/**], match trailing slash: true, gatewayFilters=[[[SetResponseHeader Access-Control-Allow-Origin = '*'], order = 1], [[SetResponseHeader Access-Control-Allow-Headers = '*'], order = 2], [[SetPath template = '/graphql'], order = 3]], metadata={}}
+2020-10-20 09:40:56,520 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.5.Final
+2020-10-20 09:40:57,108 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-10-20 09:41:00,237 INFO org.springframework.boot.StartupInfoLogger [main] Started GatewayApplication in 4.364 seconds (JVM running for 5.202)
+2020-10-20 09:41:04,220 INFO jdlf.compass.timetablegateway.filters.LoggingGlobalFilter [reactor-http-nio-3] Incoming request Route{id='timetableService', uri=http://localhost:8080, order=0, predicate=Paths: [/timetable/**], match trailing slash: true, gatewayFilters=[[[SetResponseHeader Access-Control-Allow-Origin = '*'], order = 1], [[SetResponseHeader Access-Control-Allow-Headers = '*'], order = 2], [[SetPath template = '/graphql'], order = 3]], metadata={}}

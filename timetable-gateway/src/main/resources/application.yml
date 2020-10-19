@@ -4,7 +4,7 @@ server:
 spring:
     cloud:
         gateway:
-            routes:
+          routes:
                 - id: timetableService
                   uri: "http://localhost:8080"
                   predicates:
@@ -32,6 +32,7 @@ spring:
                     - SetResponseHeader=Access-Control-Allow-Headers, *
                     - SetPath=/datasync
 
+
 #            globalcors:
 #              cors-configurations:
 #                '[/**]':
@@ -58,15 +59,15 @@ security:
     user: admin  #not used
     password: password  #not used
     routes:
-      timetableService: # is using for deakin backend
+      timetableService: # is used for deakin backend
         user: user
         password: e5c08b7b-f7f7-454b-a68c-3c231c7165d4
 
-      compassAuthService: # just an example
+      compassAuthService: # just as an example
         user: user1
         password: password1
 
-      compassSynchService: # just an example
+      compassSynchService: # just as an example
         user: user2
         password: password2
 

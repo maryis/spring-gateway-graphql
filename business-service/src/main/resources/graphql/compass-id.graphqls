@@ -1,0 +1,14 @@
+type CompassId {
+    workingSetId: String!
+    entityId: String!
+}
+
+input CompassIdCreateInput {
+    workingSetId: String!
+    entityId: String
+}
+
+input CompassIdQueryInput {
+    workingSetId: String!
+    entityId: String!
+}

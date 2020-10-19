@@ -1,0 +1,12 @@
+scalar GraphQLVoid
+scalar GraphQLLong
+
+schema {
+    query: Query
+}
+
+type Query {
+}
+
+type Mutation {
+}

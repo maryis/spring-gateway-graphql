@@ -1,0 +1,46 @@
+type Rotation {
+    id: CompassId!
+    name: String!
+    displayName: String!
+    description: String!
+    position: Int!
+    startDate: String!
+    endDate: String!
+}
+
+input RotationRefInput {
+    id: CompassIdQueryInput!
+}
+
+input RotationCreateInput {
+    id: CompassIdCreateInput!
+    name: String!
+    displayName: String!
+    description: String!
+    position: Int!
+    startDate: String!
+    endDate: String!
+}
+
+input RotationUpdateInput {
+    id: CompassIdQueryInput!
+    name: String!
+    displayName: String!
+    description: String!
+    position: Int!
+    startDate: String!
+    endDate: String!
+}
+
+extend type Mutation {
+    createRotation(rotation: RotationCreateInput!): CompassId!
+#    updateRotation(rotation: RotationUpdateInput!): CompassId!
+    deleteRotation(id: CompassIdQueryInput!): GraphQLVoid
+}
+
+extend type Query {
+#    rotationsInWorkingSet(workingSetId: String, page: Int, size: Int): [Rotation!]!
+    rotations(page: Int, size: Int): [Rotation!]!
+    rotation(id: CompassIdQueryInput!): Rotation
+#    rotationHistory(id: CompassIdQueryInput!, page: Int, size: Int): [String!]!
+}

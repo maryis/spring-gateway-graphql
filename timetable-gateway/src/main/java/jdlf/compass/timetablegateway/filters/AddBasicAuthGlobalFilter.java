@@ -35,7 +35,6 @@ public class AddBasicAuthGlobalFilter implements GlobalFilter, Ordered {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        log.info("BasicAuthRelayGlobalFilter - start");
 
         Route route = exchange.getAttribute(ServerWebExchangeUtils.GATEWAY_ROUTE_ATTR);
         if (route != null) {
@@ -50,14 +49,9 @@ public class AddBasicAuthGlobalFilter implements GlobalFilter, Ordered {
                         .headers(httpHeaders -> httpHeaders.set(HttpHeaders.AUTHORIZATION, encodedAuth))
                         .build();
 
-                log.info("BasicAuthRelayGlobalFilter - has pass - end");
-                log.info("route: "+route);
                 return chain.filter(exchange.mutate().request(request).build());
             }
         }
-
-        log.info("BasicAuthRelayGlobalFilter - without pass - end");
-        log.info("route: "+route);
 
         return chain.filter(exchange);
     }

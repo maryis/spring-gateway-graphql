@@ -36,7 +36,6 @@ public class AuthenticateRequestGlobalFilter implements GlobalFilter, Ordered {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        log.info("AuthenticationGlobalFilter - start");
 
         Route route = exchange.getAttribute(ServerWebExchangeUtils.GATEWAY_ROUTE_ATTR);
         if (route != null) {
@@ -47,8 +46,8 @@ public class AuthenticateRequestGlobalFilter implements GlobalFilter, Ordered {
             if(isValidUser)
                 return chain.filter(exchange);
 
+            log.error("User Info does not found");
             throw new BadCredentialsException("User Info does not found");
-            //exchange.getAttributes().put(AUTH_CREDENTIALS, credentials);
         }
 
         throw new AuthenticationException("????????????? ");

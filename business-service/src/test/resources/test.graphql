@@ -1,0 +1,6 @@
+{
+    courses(page:2,size:1){
+    startDate,
+    description
+    }
+}
