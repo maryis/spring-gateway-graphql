@@ -1,4 +1,4 @@
-package com.compass.timetable.gateway.exception;
+package jdlf.compass.timetablegateway.exception;
 
 public class BadCredentialsException extends RuntimeException {
 

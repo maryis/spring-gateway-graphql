@@ -1,6 +1,6 @@
-package com.compass.timetable.gateway;
+package jdlf.compass.timetablegateway;
 
-import com.compass.timetable.gateway.properties.SecurityAuthProperties;
+import jdlf.compass.timetablegateway.properties.SecurityAuthProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

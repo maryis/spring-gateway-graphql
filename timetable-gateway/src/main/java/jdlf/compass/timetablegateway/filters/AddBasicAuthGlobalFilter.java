@@ -1,8 +1,8 @@
-package com.compass.timetable.gateway.filters;
+package jdlf.compass.timetablegateway.filters;
 
 
-import com.compass.timetable.gateway.properties.SecurityAuthProperties;
-import com.compass.timetable.gateway.util.Base64Encoder;
+import jdlf.compass.timetablegateway.properties.SecurityAuthProperties;
+import jdlf.compass.timetablegateway.util.Base64Encoder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;

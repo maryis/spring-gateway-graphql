@@ -1,6 +1,6 @@
-package com.compass.timetable.gateway.security.provider;
+package jdlf.compass.timetablegateway.security.provider;
 
-import com.compass.timetable.gateway.security.Credential;
+import jdlf.compass.timetablegateway.security.Credential;
 import org.springframework.stereotype.Component;
 
 @Component

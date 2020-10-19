@@ -1,8 +1,8 @@
-package com.compass.timetable.gateway.security.provider;
+package jdlf.compass.timetablegateway.security.provider;
 
-import com.compass.timetable.gateway.properties.SecurityAuthProperties;
-import com.compass.timetable.gateway.security.Credential;
-import com.compass.timetable.gateway.security.basic.BasicAuthCredentials;
+import jdlf.compass.timetablegateway.properties.SecurityAuthProperties;
+import jdlf.compass.timetablegateway.security.Credential;
+import jdlf.compass.timetablegateway.security.basic.BasicAuthCredentials;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

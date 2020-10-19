@@ -1,3 +1,8 @@
+#to run:
+
+\#gradlew timetable-gateway:bootRun
+
+#good to know:
 Zuul is a blocking API. A blocking gateway api makes use of as many threads as the number of incoming requests
 spring cloud gateway is a non-blocking gateway. functionalities:
 - routing

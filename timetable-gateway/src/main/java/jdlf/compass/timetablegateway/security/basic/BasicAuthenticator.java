@@ -1,9 +1,9 @@
-package com.compass.timetable.gateway.security.basic;
+package jdlf.compass.timetablegateway.security.basic;
 
-import com.compass.timetable.gateway.exception.BadCredentialsException;
-import com.compass.timetable.gateway.security.Authenticator;
-import com.compass.timetable.gateway.security.provider.AuthProvider;
-import com.compass.timetable.gateway.util.Base64Encoder;
+import jdlf.compass.timetablegateway.exception.BadCredentialsException;
+import jdlf.compass.timetablegateway.security.Authenticator;
+import jdlf.compass.timetablegateway.security.provider.AuthProvider;
+import jdlf.compass.timetablegateway.util.Base64Encoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpHeaders;

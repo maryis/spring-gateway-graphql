@@ -1,4 +1,4 @@
-package com.compass.timetable.gateway.filters;
+package jdlf.compass.timetablegateway.filters;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

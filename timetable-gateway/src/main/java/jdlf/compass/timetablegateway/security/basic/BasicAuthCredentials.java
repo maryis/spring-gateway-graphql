@@ -1,6 +1,6 @@
-package com.compass.timetable.gateway.security.basic;
+package jdlf.compass.timetablegateway.security.basic;
 
-import com.compass.timetable.gateway.security.Credential;
+import jdlf.compass.timetablegateway.security.Credential;
 import lombok.Getter;
 import lombok.Setter;
 

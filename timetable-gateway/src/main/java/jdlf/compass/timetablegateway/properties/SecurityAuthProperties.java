@@ -1,4 +1,4 @@
-package com.compass.timetable.gateway.properties;
+package jdlf.compass.timetablegateway.properties;
 
 import lombok.Data;
 import lombok.Getter;

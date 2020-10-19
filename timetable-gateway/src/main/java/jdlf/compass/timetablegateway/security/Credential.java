@@ -1,4 +1,4 @@
-package com.compass.timetable.gateway.security;
+package jdlf.compass.timetablegateway.security;
 
 public interface Credential {
 }

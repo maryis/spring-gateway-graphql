@@ -1,4 +1,4 @@
-package com.compass.timetable.gateway.configs;
+package jdlf.compass.timetablegateway.configs;
 
 import org.springframework.boot.actuate.trace.http.HttpTrace;
 import org.springframework.boot.actuate.trace.http.HttpTraceRepository;

@@ -74,7 +74,7 @@ security:
   #**************************************************
   #redis  : if we use third party AS, and we want to persist generated JWT if we need validations in GW layer
   #rate limit
-  #fallback url : we do not need
+  #fallback url : we do not need this
 
 
 

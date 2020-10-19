@@ -1,4 +1,4 @@
-package com.compass.timetable.gateway.configs;
+package jdlf.compass.timetablegateway.configs;
 
 
 import org.springframework.context.annotation.Bean;
@@ -8,9 +8,6 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.reactive.CorsConfigurationSource;
 import org.springframework.web.cors.reactive.CorsWebFilter;
 import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
-
-import java.util.Arrays;
-import java.util.Collections;
 
 @Configuration
 public class PreFlightCorsConfiguration {
