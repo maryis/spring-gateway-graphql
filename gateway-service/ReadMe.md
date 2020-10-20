@@ -3,7 +3,7 @@
 
 #to run:
 
-\#gradlew timetable-gateway:bootRun
+\#gradlew gateway-service:bootRun
 
 
 # to do :

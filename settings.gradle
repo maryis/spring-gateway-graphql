@@ -2,6 +2,6 @@ rootProject.name = 'timetable-integration-services'
 include 'import-service'
 include 'export-service'
 include 'business-service'
-include 'timetable-gateway'
+include 'gateway-service'
 
 
