@@ -11,6 +11,7 @@ spring:
                     - Path=/timetable/**
 
                   filters:
+#                    - CachingRequestBodyFilter
                     - SetResponseHeader=Access-Control-Allow-Origin, *
                     - SetResponseHeader=Access-Control-Allow-Headers, *
                     - SetPath=/graphql

@@ -46,16 +46,17 @@ public class AuthenticateRequestGlobalFilter implements GlobalFilter, Ordered {
             if(isValidUser)
                 return chain.filter(exchange);
 
-            log.error("User Info does not found");
+            log.error("User Info does not found! ");
             throw new BadCredentialsException("User Info does not found");
         }
 
-        throw new AuthenticationException("????????????? ");
+        log.error("Null Route! ");
+        throw new AuthenticationException("Unknown to me");
     }
 
     @Override
     public int getOrder() {
-        return 3;
+        return 2;
     }
 
 }

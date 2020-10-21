@@ -10,15 +10,19 @@ import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.cloud.gateway.route.Route;
 import org.springframework.cloud.gateway.support.ServerWebExchangeUtils;
 import org.springframework.core.Ordered;
+import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
+import java.nio.charset.StandardCharsets;
+
+import static org.springframework.cloud.gateway.support.ServerWebExchangeUtils.CACHED_REQUEST_BODY_ATTR;
+
 
 @Component
-@Slf4j
 public class AddBasicAuthGlobalFilter implements GlobalFilter, Ordered {
 
     public static final String BASIC_AUTH_PREFIX = "Basic ";
@@ -49,7 +53,7 @@ public class AddBasicAuthGlobalFilter implements GlobalFilter, Ordered {
                         .headers(httpHeaders -> httpHeaders.set(HttpHeaders.AUTHORIZATION, encodedAuth))
                         .build();
 
-                return chain.filter(exchange.mutate().request(request).build());
+                return chain.filter(exchange);
             }
         }
 
@@ -58,6 +62,6 @@ public class AddBasicAuthGlobalFilter implements GlobalFilter, Ordered {
 
     @Override
     public int getOrder() {
-        return 2;
+        return 3;
     }
 }
