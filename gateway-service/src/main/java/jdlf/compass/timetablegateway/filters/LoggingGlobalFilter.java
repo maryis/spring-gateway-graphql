@@ -7,12 +7,14 @@ import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.cloud.gateway.route.Route;
 import org.springframework.core.Ordered;
+import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
 import java.net.URI;
+import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.Set;
 
@@ -27,29 +29,40 @@ public class LoggingGlobalFilter implements GlobalFilter, Ordered {
 
         Set<URI> uris =
                 exchange.getAttributeOrDefault(GATEWAY_ORIGINAL_REQUEST_URL_ATTR, Collections.emptySet());
-        String originalUri = (uris.isEmpty()) ? "Unknown" : uris.iterator().next().toString();
         Route route = exchange.getAttribute(GATEWAY_ROUTE_ATTR);
-        URI routeUri = exchange.getAttribute(GATEWAY_REQUEST_URL_ATTR);
-        log.info( "Incoming request "+ route);
+        log.info( "Incoming requestId={}, from origin={} ",exchange.getRequest().getId(), exchange.getRequest().getLocalAddress());
+
+        long startTime = System.currentTimeMillis();
 
         return chain
                 .filter(exchange)
                 .then(
                         Mono.fromRunnable(
                                 () -> {
+                                    String serviceResponseStatus= exchange.getResponse().getStatusCode().toString();
 
-                                    HttpStatus status = exchange.getResponse().getStatusCode();
-                                    if (status != HttpStatus.OK)
-                                        log.info("Outgoing Response Route "+ route );
+                                    if(serviceResponseStatus.startsWith("2")){
+                                        serviceResponseStatus="Success";
+                                    }
+                                    else{
+                                        serviceResponseStatus="Failure";
+                                    }
 
-                                    log.error(
-                                                "Outgoing Response:  "
-                                                        + exchange.getResponse().toString() );
-                                }));
+
+
+                                    long execTime = System.currentTimeMillis() - startTime;
+                                    log.info("Response requestId={}, serviceResponseStatus={}, serviceResponseTime(ms)={}",
+                                            exchange.getRequest().getId(),
+                                            serviceResponseStatus,
+                                            execTime
+                                            );
+
+                                   }));
+
     }
 
     @Override
     public int getOrder() {
-        return 0;
+        return 4;
     }
 }

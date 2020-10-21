@@ -40,6 +40,9 @@
     <logger name="jdlf.compass.timetablegateway" level="info" additivity="false">
         <appender-ref ref="RollingFile" />
     </logger>
+    <logger name="org.springframework" level="error" additivity="false">
+        <appender-ref ref="RollingFile" />
+    </logger>
     <logger name="org.springframework" level="info" additivity="false">
         <appender-ref ref="Console" />
     </logger>

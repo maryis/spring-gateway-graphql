@@ -1,3 +1,3 @@
 #to run timetable-gateway:
 
-\# gradlew timetable-gateway:bootRun
+\# gradlew gateway-service:bootRun

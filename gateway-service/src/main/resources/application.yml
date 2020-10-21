@@ -9,6 +9,7 @@ spring:
                   uri: "http://localhost:8080"
                   predicates:
                     - Path=/timetable/**
+
                   filters:
                     - SetResponseHeader=Access-Control-Allow-Origin, *
                     - SetResponseHeader=Access-Control-Allow-Headers, *
